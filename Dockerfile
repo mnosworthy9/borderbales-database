@@ -13,6 +13,6 @@ ENV POSTGRES_PASSWORD=$DB_PASS
 ENV POSTGRES_PORT=$DB_PORT
 
 # Expose the PostgreSQL default port
-EXPOSE $DB_PORT
+EXPOSE 5432
 
 COPY ./sql/ /docker-entrypoint-initdb.d/
