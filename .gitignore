@@ -1,1 +1,3 @@
 .env.bat
+drop tables.pgsql
+inserts.pgsql
