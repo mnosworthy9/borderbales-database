@@ -1,4 +1,4 @@
-FROM arm64v8/postgres:latest
+FROM postgres:latest
 
 # Define build arguments (optional but recommended for clarity)
 ARG DB_USER
