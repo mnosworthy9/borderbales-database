@@ -15,6 +15,7 @@ ENV POSTGRES_PORT=${DB_PORT}
 # Expose the PostgreSQL default port
 EXPOSE 5432
 
-COPY ./sql/ /docker-entrypoint-initdb.d/
-
+RUN mkdir -p /docker-entrypoint-initdb.d/
 RUN chmod 644 /docker-entrypoint-initdb.d/*
+
+COPY ./sql/ /docker-entrypoint-initdb.d/
