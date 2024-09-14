@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM arm64v8/postgres:latest
 
 # Define build arguments (optional but recommended for clarity)
 ARG DB_USER
@@ -15,6 +15,6 @@ ENV POSTGRES_PORT=${DB_PORT}
 # Expose the PostgreSQL default port
 EXPOSE 5432
 
-RUN chmod 644 /docker-entrypoint-initdb.d/
-
 COPY ./sql/ /docker-entrypoint-initdb.d/
+
+RUN chmod 644 /docker-entrypoint-initdb.d/*
