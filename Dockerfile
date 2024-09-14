@@ -16,8 +16,9 @@ ENV POSTGRES_PORT=${DB_PORT}
 EXPOSE 5432
 
 RUN mkdir -p /docker-entrypoint-initdb.d/
-RUN chmod 644 /docker-entrypoint-initdb.d/*
 
 COPY docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
 
 COPY ./sql/ /docker-entrypoint-initdb.d/
+
+RUN chmod 644 /docker-entrypoint-initdb.d/*
