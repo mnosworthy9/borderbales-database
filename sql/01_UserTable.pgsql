@@ -1,11 +1,3 @@
--- Database: website
-
--- Written by: Matthew Nosworthy
-
--- contains user table
-
-
-
 CREATE TABLE IF NOT EXISTS "user" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 10000 INCREMENT BY 1),
   "first_name" varchar(50) DEFAULT NULL,
