@@ -28,7 +28,12 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: |
       $(imageTag)
-    arguments: '--build-arg DB_USER=$(PG_USER) --build-arg DB_PASS=$(PGPASSWORD) --build-arg DB_NAME=$(PG_DATABASE) --build-arg DB_PORT=$(PG_PORT) --platform=linux/arm64'
+    arguments: >
+      --build-arg DB_USER=$(PG_USER)
+      --build-arg DB_PASS=$(PGPASSWORD)
+      --build-arg DB_NAME=$(PG_DATABASE)
+      --build-arg DB_PORT=$(PG_PORT)
+      --platform=linux/arm64
     buildContext: '$(Build.SourcesDirectory)'
 
 - task: Docker@2
